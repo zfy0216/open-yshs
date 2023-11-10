@@ -1,4 +1,49 @@
+---
+tags: 教程
+---
 
+# 远上寒山调用模型教程
+
+通过API-KEY调用LLM-3.5和4.0.
+
+## 设置API-KEY
+
+```bash
+vi ~/.bashrc
+# 添加一行
+export YSHS_API_KEY="Fill in your API-KEY here"
+# 保存后检查
+source ~/.bashrc   # 刷新环境变量
+echo $YSHS_API_KEY  # 如果输出你的API-KEY，则设置成功
+```
+注：尽量不要在代码中直接写入API-KEY，以免泄露。
+
+## 列出可用模型
+
++ 安装yshs python包
+```bash
+pip install yshs
+```
+
++ 列出模型：
+```python
+import os, sys
+import yshs
+yshs.api_key = os.getenv('YSHS_API_KEY')
+
+response = yshs.Models.list(refresh=True, return_all_info=False)
+print(response)
+print(f'Number of models: {len(response)}')
+
+# 输出：
+['openai/gpt-3.5-turbo', 'openai/gpt-4']
+Number of models: 2
+```
+
+## 调用模型
+
+
+```python
 import os, sys
 import yshs
 yshs.api_key = os.getenv('YSHS_API_KEY')  # 读取环境变量中的 API KEY并设置
@@ -43,3 +88,6 @@ if __name__ == '__main__':
         ]
     answer = request_gpt35(messages=messages)
     # answer = request_gpt4(messages=messages)
+
+```
+
