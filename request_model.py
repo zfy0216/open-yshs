@@ -41,5 +41,5 @@ if __name__ == '__main__':
             ## 如果有多轮对话，可以继续添加，"role": "assistant", "content": "Hello there! How may I assist you today?"
             ## 如果有多轮对话，可以继续添加，"role": "user", "content": "I want to buy a car."
         ]
-    answer = request_gpt35(messages=messages)
-    # answer = request_gpt4(messages=messages)
+    # answer = request_gpt35(messages=messages)
+    answer = request_gpt4(messages=messages)

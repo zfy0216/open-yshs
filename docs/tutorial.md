@@ -88,6 +88,5 @@ if __name__ == '__main__':
         ]
     answer = request_gpt35(messages=messages)
     # answer = request_gpt4(messages=messages)
-
 ```
 

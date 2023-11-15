@@ -1,4 +1,6 @@
 
+yshs/repos/*
+
 *.env
 
 *nohup
